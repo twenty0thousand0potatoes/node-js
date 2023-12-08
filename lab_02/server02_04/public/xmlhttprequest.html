@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>server02_04</title>
+
+   
+  </head>
+
+  <style>
+    .wrapper {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  </style>
+
+  <body>
+    <div class="wrapper">
+      <h1 id="info"></h1>
+    </div>
+
+    <script >
+      const text_line = document.getElementById("info");
+      console.log(text_line);
+
+      const xhr = new XMLHttpRequest();
+      xhr.open("GET", "http://localhost:5000/api/name");
+      xhr.send();
+
+      xhr.onload = () => {
+        if (xhr.status != 200) {
+          alert(`Ошибка ${xhr.status}: ${xhr.statusText}`);
+        } else {
+          text_line.innerHTML = xhr.responseText;
+        }
+      };
+    </script>
+  </body>
+</html>

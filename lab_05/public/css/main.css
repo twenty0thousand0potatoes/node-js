@@ -1,0 +1,113 @@
+body {
+  background-color: #212020;
+  background-image: url("../images/Bg.png");
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-position: center center;
+  backdrop-filter: blur(10px);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.wrapper_form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100%;
+}
+
+form {
+  width: 600px;
+  height: 700px;
+  padding: 20px;
+  border-radius: 15px;
+  border-radius: 25px;
+  border: 1px solid #efefef;
+  background: linear-gradient(
+    120deg,
+    rgba(239, 239, 239, 0.6) 0%,
+    rgba(255, 255, 255, 0.1) 100%
+  );
+  backdrop-filter: blur(30px);
+  color: #fff;
+}
+
+form > * {
+  display: block;
+  margin: 30px 10px;
+}
+
+form div > * {
+  display: block;
+}
+
+.header_form {
+  font-size: 22px;
+  width: 97%;
+  margin: 0 auto;
+  border-bottom: 5px solid #fff;
+}
+
+.header_form h2 {
+  text-align: center;
+  margin: 5px;
+}
+
+.label_class {
+  font-size: 20px;
+}
+
+input,
+textarea {
+  width: 250px;
+  height: 35px;
+  border-radius: 25px;
+  border: 2px solid #efefef;
+  background: linear-gradient(
+    120deg,
+    rgba(239, 239, 239, 0.05) 0%,
+    rgba(255, 255, 255, 0.01) 100%
+  );
+  box-shadow: 0px 4px 25px 0px rgba(0, 0, 0, 0.25);
+  padding: 10px;
+  color: #fff;
+  font-size: 18px;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+  text-shadow: 15px 12px 50px rgba(0, 0, 0, 0.3);
+  font-size: 18px;
+}
+
+input:focus,
+textarea:focus {
+  outline: none;
+}
+
+textarea {
+  min-width: 300px;
+  min-height: 200px;
+  max-width: 400px;
+  max-height: 250px;
+}
+
+.submit_button {
+    margin: 0 auto;
+    width: 300px;
+    cursor: pointer;
+  font-size: 24px;
+  color: #fff;
+
+    padding: 15px;
+  border-radius: 20px;
+  border: 2px solid #efefef;
+  background: linear-gradient(
+    120deg,
+    rgba(221, 122, 5, 0.8) 0%,
+    rgba(236, 25, 164, 0.8) 100%
+  );
+  box-shadow: 0px 4px 25px 0px rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(0px);
+}

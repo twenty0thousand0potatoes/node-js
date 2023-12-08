@@ -1,0 +1,13 @@
+{
+  "name": "server02-02",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "type": "module",
+  "scripts": {
+    "start:dev":"nodemon app.js",
+    "start:prod":"node app.js"
+  },
+  "author": "",
+  "license": "ISC"
+}

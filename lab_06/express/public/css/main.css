@@ -1,0 +1,120 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+--index: calc(1vw + 1vh)
+}
+
+@font-face {
+  font-family: kemirck-3d;
+  src: url("../../sources/parallax-3d-lens-effect-website/fonts/kamerik205-heavy.woff2");
+  font-weight: 900;
+}
+
+@font-face {
+  font-family: merriweather-3d;
+  src: url("../../sources/parallax-3d-lens-effect-website/fonts/merriweather-regular-italic.woff2");
+  font-weight: 400;
+}
+
+body {
+  background-color: #000;
+  color: #fff;
+  font-family: kemirck-3d;
+  overflow: hidden;
+  padding: 5px;
+}
+
+.logo {
+  width: calc( var(--index)*8);
+  height: calc( var(--index)*8);
+  background-repeat: no-repeat;
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%, -30%);
+  z-index: 1;
+}
+
+.layers {
+  perspective: 1000px;
+  overflow: hidden;
+}
+
+.layers__container{
+    height: 100vh;
+    transform-style: preserve-3d;
+    transform: rotateX(var(--move-y)) rotateY(var(--move-x));
+}
+
+.layers__item{
+    position: absolute;
+  inset: -7vw;
+    background-size: cover;
+    background-position: center;
+
+}
+
+.layer-3 {
+  position: absolute;
+  top: 10%;
+  left: 30%;
+  transform: translate(-30%, -30%);
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.layer-3 .hero-content h1 {
+  font-size: 68px;
+  text-transform: uppercase;
+}
+
+.layer-3 .hero-content .hero-content__p {
+  font-family: merriweather-3d;
+  font-size: 30px;
+  padding: 20px 0;
+}
+
+.layer-3 .hero-content .button-start {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-100%);
+  padding: 15px;
+  border-radius: 40px;
+  font-size: 20px;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #fff;
+  text-transform: uppercase;
+  background: none;
+  border: 1px solid #fff;
+  cursor: pointer;
+}
+
+.layer-1{
+    transform: translateZ(-155px) scale(1.1);
+}
+
+.layer-2{
+    transform: translateZ(80px) scale(.8);
+}
+
+.layer-3{
+    transform: translateZ(180px) scale(.8);
+}
+
+.layer-4{
+    transform: translateZ(190px) scale(.8);
+}
+
+.layer-5{
+    transform: translateZ(300px) scale(.8);
+}
+
+.layer-6{
+    transform: translateZ(380px) scale(.8);
+}

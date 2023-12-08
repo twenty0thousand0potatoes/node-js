@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Page</title>
+    <style>
+      .wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrapper"></div>
+
+    <script>
+      const writeContent = (content, time, res) => {
+        let elem = document.createElement("p");
+
+        const newContent = document.createTextNode(
+          `${content}.Результат:${time}-${content}/${res}`
+        );
+        elem.style.display = 'block';
+        elem.appendChild(newContent);
+        document.querySelector(".wrapper").appendChild(elem);
+      };
+
+      const req = async (x) => {
+        try {
+          const response = await fetch(`http://localhost:5000/fact?k=${x}`);
+          if (!response.ok) {
+            throw new Error("Ошибка HTTP: " + response.status);
+          }
+          const jsonResponse = await response.json();
+          return jsonResponse.fact;
+        } catch (err) {
+          return err.message;
+        }
+      };
+
+      const startTime = new Date().getTime();
+      const requests = [];
+
+      for (let index = 0; index < 20; index++) {
+        requests.push(req(index));
+      }
+
+      Promise.all(requests)
+        .then((results) => {
+          const endTime = new Date().getTime();
+          const elapsedTime = endTime - startTime;
+          for (let i = 0; i < results.length; i++) {
+            writeContent(i, elapsedTime, results[i]);
+          }
+        })
+        .catch((error) => {
+          console.error(error);
+        });
+    </script>
+  </body>
+</html>

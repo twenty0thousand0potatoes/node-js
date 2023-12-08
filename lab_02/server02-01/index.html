@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Page</title>
+
+    <style>
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      .table th {
+        background: rgba(0, 0, 0, 0.1);
+        padding: 10px;
+      }
+
+      .table td {
+        padding: 10px;
+        text-align: center;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+      }
+
+      .wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        background: #395ce688;
+      }
+
+      .table {
+        color: #333333;
+        overflow: hidden;
+        padding: 10px;
+        border-radius: 10px;
+        width: 70%;
+        border-collapse: collapse;
+        border-spacing: 0;
+        background: rgba(255, 255, 255, 0.2); /* Прозрачный фон */
+        border-radius: 10px; /* Радиус углов для скругления */
+        backdrop-filter: blur(10px); /* Создание размытого эффекта */
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Тень для стекла */
+      }
+
+      .table td .wrapper_info {
+        margin: 0 auto;
+        display: block;
+        padding: 5px 15px;
+        width: 70px;
+        background: #ffffff38;
+        border-radius: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrapper">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Факультет</th>
+            <th>Курс</th>
+            <th>Группа</th>
+            <th>Фамилия</th>
+            <th>Имя</th>
+            <th>Отчество</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span class="wrapper_info">FIT</span></td>
+            <td><span class="wrapper_info">3</span></td>
+            <td><span class="wrapper_info">8</span></td>
+            <td><span class="wrapper_info">Петров</span></td>
+            <td><span class="wrapper_info">Сидор</span></td>
+            <td><span class="wrapper_info">Иванович</span></td>
+          </tr>
+
+          <tr>
+            <td><span class="wrapper_info">FIT</span></td>
+            <td><span class="wrapper_info">3</span></td>
+            <td><span class="wrapper_info">8</span></td>
+            <td><span class="wrapper_info">Петров</span></td>
+            <td><span class="wrapper_info">Сидор</span></td>
+            <td><span class="wrapper_info">Иванович</span></td>
+          </tr>
+
+          <tr>
+            <td><span class="wrapper_info">FIT</span></td>
+            <td><span class="wrapper_info">3</span></td>
+            <td><span class="wrapper_info">8</span></td>
+            <td><span class="wrapper_info">Петров</span></td>
+            <td><span class="wrapper_info">Сидор</span></td>
+            <td><span class="wrapper_info">Иванович</span></td>
+          </tr>
+
+          <tr>
+            <td><span class="wrapper_info">FIT</span></td>
+            <td><span class="wrapper_info">3</span></td>
+            <td><span class="wrapper_info">8</span></td>
+            <td><span class="wrapper_info">Петров</span></td>
+            <td><span class="wrapper_info">Сидор</span></td>
+            <td><span class="wrapper_info">Иванович</span></td>
+          </tr>
+          <tr>
+            <td><span class="wrapper_info">FIT</span></td>
+            <td><span class="wrapper_info">3</span></td>
+            <td><span class="wrapper_info">8</span></td>
+            <td><span class="wrapper_info">Петров</span></td>
+            <td><span class="wrapper_info">Сидор</span></td>
+            <td><span class="wrapper_info">Иванович</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </body>
+</html>

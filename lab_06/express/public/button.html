@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button type="button" id="json">JSON</button>
+    <script>
+      const btn = document.getElementById("json");
+      btn.addEventListener("click", () => {
+
+        const data = {
+            __comment:'Запрос.Лабораторная работа 7/10',
+            x:1, 
+            y:3,
+            s:"Сообщение",
+            m:['a', 'b', 'c', 'd'],
+            o:{surname:'Петров', name:'Петя'} 
+        }
+
+
+        fetch('http://localhost:7000/json/button', {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(data),
+        })
+          .then((response) => response.json())
+          .then((responseData) => {
+            console.log(responseData)
+          })
+          .catch((error) => {
+            
+            console.error("Ошибка:", error);
+          });
+      });
+    </script>
+  </body>
+</html>

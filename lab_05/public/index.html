@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nodemailer</title>
+    <link rel="stylesheet" href="./css/main.css" type="text/css" />
+  </head>
+  <body>
+    <div class="wrapper_form">
+      <form method="post" id="my_form">
+
+        <div class="header_form">
+            <h2>Send your message</h2>
+        </div>
+
+        <div class="wrapper_input">
+          <label for="mail_from" class="label_class">от кого</label>
+          <input type="email" placeholder="pashka454@gmail.com" id="mail_from" required  name="from_email"/>
+        </div>
+        <div class="wrapper_input">
+          <label for="mail_to" class="label_class">кому</label>
+          <input type="email" placeholder="pashka454@gmail.com" id="mail_to" required name="to_email" />
+        </div>
+        <div class="wrapper_input">
+          <label for="message_ipnut" class="label_class">введите своё сообщение</label>
+          <textarea name="message" required id="message_ipnut" placeholder="Dear friend!..." maxlength="500"></textarea>
+        </div>
+        <button type="submit" class="submit_button">Отправить</button>
+      </form>
+    </div>
+
+    <script type="text/javascript">
+
+        const form = document.getElementById('my_form');
+        
+        
+        form.addEventListener('submit', function (event) {
+            event.preventDefault(); 
+           
+            const formData = new FormData(form);
+        
+            const formDataObject = {};
+            formData.forEach((value, key) => {
+                formDataObject[key] = value;
+            });
+        
+            fetch('http://localhost:5000/form', {
+                method: 'POST',
+                body: formData 
+            })
+            .then(function(response) {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+        
+                response.status === 200 ? alert("Ваше сообщение отправлено!") : alert("Произошла ошибка!");
+                return response.text();
+        
+            })
+            .then(function(data) {
+                console.log(data);
+            })
+            .catch(function(error) {
+                console.error(error);
+            });
+        });
+        
+            </script>
+  </body>
+</html>
