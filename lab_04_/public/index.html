@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="./styles/style.css" rel="stylesheet" type="text/css" />
+    <title>EventEmmiter</title>
+  </head>
+  <body>
+
+    <div class="pop_up_edit_elem">
+      <div class="close_edit_pop_up">&#10010;</div>
+      <form class=" edit_form" method="post">
+        <h2>Edit User Data!</h2>
+
+        <label for="edit_id_user" class="block">
+          Edit User ID
+          <input type="number" name="id" id="edit_id_user" class="block" />
+        </label>
+
+        <label for="edit_name_user" class="block">
+          Edit User NAME
+          <input type="text" name="name" id="edit_name_user" class="block" />
+        </label>
+
+        <label for="edit_bd_user" class="block">
+          Edit User BD
+          <input type="date" name="dateBD" id="edit_bd_user" class="block" />
+        </label>
+
+        <button type="submit" class="submit_btn">Edit User Data</button>
+
+        <p class="message_server"></p>
+      </form>
+    </div>
+
+    <div class="pop_up_add_elem">
+      <div class="close_pop_up">&#10010;</div>
+      <form class="form" method="post">
+        <h2>Add New User!</h2>
+
+        <label for="id_user" class="block">
+          Enter User ID
+          <input type="number" name="id" id="id_user" class="block" />
+        </label>
+
+        <label for="name_user" class="block">
+          Enter User NAME
+          <input type="text" name="name" id="name_user" class="block" />
+        </label>
+
+        <label for="bd_user" class="block">
+          Enter User BD
+          <input type="date" name="dateBD" id="bd_user" class="block" />
+        </label>
+
+        <button type="submit" class="submit_btn">Add User</button>
+
+        <p class="message_server_1"></p>
+      </form>
+    </div>
+
+    <div class="pop_up_loader">
+      <img src="./images/circles.svg" alt="loader" />
+    </div>
+
+    <div class="wrapper_data_table">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>NAME</th>
+            <th>BD</th>
+            <th id="add_elem">+</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+    <script defer src="./scripts/main.js"></script>
+  </body>
+</html>
