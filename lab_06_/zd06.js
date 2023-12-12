@@ -13,9 +13,11 @@ formData.append('file', fileStream);
 
 axios({
     method: "POST",
-    url: "http://127.0.0.1:5000/upload",
+    url: "http://127.0.0.1:5100/upload",
+    headers: {
+        'Content-Type': `multipart/form-data; boundary=${formData._boundary}`,
+      },
     data: formData,
-    headers: formData.getHeaders()
 }).then(response=>{
 log(response.data)
 })

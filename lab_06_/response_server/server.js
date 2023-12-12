@@ -30,10 +30,14 @@ app.get("/path", (req, res) => {
 });
 
 app.get("/query", (req, res) => {
-  res.status(200);
-  res.header("Content-Type", "text/plain");
-  const result = (Number(req.query.x) + Number(req.query.y)).toString();
-  res.end(result);
+  res.header("Content-Type", "application/json");
+  const result = {
+    "+" :  (Number(req.query.x) + Number(req.query.y)).toString(),
+    "-" :  (Number(req.query.x) - Number(req.query.y)).toString(),
+    "*" : (Number(req.query.x) * Number(req.query.y)).toString(),
+    ":" : (Number(req.query.x) / Number(req.query.y)).toString(),
+  };
+  res.status(200).json(result);
 });
 
 app.post('/zd03', (req,res)=>{

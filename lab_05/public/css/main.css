@@ -1,3 +1,15 @@
+@font-face {
+  font-family: arvo;
+  src: url("../fonts/Arvo-Regular.ttf");
+}
+
+html, * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: arvo;
+}
+
 body {
   background-color: #212020;
   background-image: url("../images/Bg.png");
@@ -6,6 +18,7 @@ body {
   background-position: center center;
   backdrop-filter: blur(10px);
   font-family: Arial, Helvetica, sans-serif;
+  overflow: hidden;
 }
 
 .wrapper_form {
@@ -17,8 +30,7 @@ body {
 }
 
 form {
-  width: 600px;
-  height: 700px;
+  width: 500px;
   padding: 20px;
   border-radius: 15px;
   border-radius: 25px;
@@ -57,10 +69,14 @@ form div > * {
   font-size: 20px;
 }
 
+.label_class, input{
+  display: block;
+}
+
 input,
 textarea {
+  margin-top: 10px;
   width: 250px;
-  height: 35px;
   border-radius: 25px;
   border: 2px solid #efefef;
   background: linear-gradient(
@@ -69,7 +85,7 @@ textarea {
     rgba(255, 255, 255, 0.01) 100%
   );
   box-shadow: 0px 4px 25px 0px rgba(0, 0, 0, 0.25);
-  padding: 10px;
+  padding: 15px;
   color: #fff;
   font-size: 18px;
 }
@@ -79,6 +95,7 @@ textarea::placeholder {
   color: rgba(255, 255, 255, 0.7);
   text-shadow: 15px 12px 50px rgba(0, 0, 0, 0.3);
   font-size: 18px;
+  font-family: arv0;
 }
 
 input:focus,
@@ -94,13 +111,13 @@ textarea {
 }
 
 .submit_button {
-    margin: 0 auto;
-    width: 300px;
-    cursor: pointer;
+  margin: 0 auto;
+  width: 300px;
+  cursor: pointer;
   font-size: 24px;
   color: #fff;
 
-    padding: 15px;
+  padding: 15px;
   border-radius: 20px;
   border: 2px solid #efefef;
   background: linear-gradient(
@@ -110,4 +127,8 @@ textarea {
   );
   box-shadow: 0px 4px 25px 0px rgba(0, 0, 0, 0.25);
   backdrop-filter: blur(0px);
+};
+
+.wrapper_input label input{
+
 }

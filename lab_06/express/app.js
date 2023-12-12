@@ -175,6 +175,7 @@ app.post("/upload", upload.single("file"), (req, res) => {
 //05
 app.use((req, res, next) => {
   res.status(405).send("Метод или URL не поддерживается!");
+  next();
 });
 
 server.listen(7000, (err) => {

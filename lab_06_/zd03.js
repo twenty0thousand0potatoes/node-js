@@ -1,11 +1,11 @@
 import http from 'http';
 import { log } from 'console';
 
-const json_params = JSON.stringify({x: 3, y: 7, s1: "раз",});
+const json_params = JSON.stringify({x: 3, y: 7, s1: "раз, два, три",});
 const options = {
   host: "127.0.0.1",
   path: '/zd03',
-  port: 5000,
+  port: 5100,
   method: "POST",
   headers: {
     'Content-Type': 'application/json; charset=utf-8',

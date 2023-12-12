@@ -3,7 +3,7 @@ import http from 'http';
 import { log } from 'console';
   
 const data = JSON.stringify({
-    __comment:'Запрос.Лабораторная работа 7/10',
+    __comment:'Запрос.Лабораторная работа 8/10',
     x:1, 
     y:3,
     s:"Сообщение",
@@ -15,7 +15,7 @@ const data = JSON.stringify({
 const options = {
     host: "127.0.0.1",
     path: '/zd04',
-    port: 5000,
+    port: 5100,
     method: "POST",
     headers: {
         'Content-Type': 'application/json; charset=utf-8',
