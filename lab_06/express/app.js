@@ -9,6 +9,7 @@ import multer from 'multer'
 const app = express();
 app.use(express.static("public"));
 app.use(bodyParser.json());
+app.use(express.urlencoded({ extended: true }));
 app.use('/sources/parallax-3d-lens-effect-website', express.static(path.join(path.resolve(), 'sources/parallax-3d-lens-effect-website')));
 const server = http.createServer(app);
 const publicDirectoryPath = path.join(path.resolve(), 'public');
@@ -119,9 +120,9 @@ app.get("/form", (req, res) => {
   }
 });
 
-app.get("/submit-form", (req, res) => {
-  const queryParams = req.query;
-  res.send(`<pre>${JSON.stringify(queryParams, null, 2)}</pre>`);
+app.post("/submit-form", (req, res) => {
+  const bodyParams = req.body;
+  res.send(`<pre>${JSON.stringify(bodyParams, null, 2)}</pre>`);
 });
 
 //07
@@ -175,7 +176,6 @@ app.post("/upload", upload.single("file"), (req, res) => {
 //05
 app.use((req, res, next) => {
   res.status(405).send("Метод или URL не поддерживается!");
-  next();
 });
 
 server.listen(7000, (err) => {
